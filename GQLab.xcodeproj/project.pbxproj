@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E2F74C8C26DD324000749187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8B26DD324000749187 /* AppDelegate.swift */; };
 		E2F74C8E26DD324000749187 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8D26DD324000749187 /* SceneDelegate.swift */; };
-		E2F74C9026DD324000749187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8F26DD324000749187 /* ViewController.swift */; };
+		E2F74C9026DD324000749187 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8F26DD324000749187 /* MainViewController.swift */; };
 		E2F74C9326DD324000749187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F74C9126DD324000749187 /* Main.storyboard */; };
 		E2F74C9526DD324200749187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F74C9426DD324200749187 /* Assets.xcassets */; };
 		E2F74C9826DD324200749187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F74C9626DD324200749187 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		E2F74C8826DD324000749187 /* GQLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GQLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F74C8B26DD324000749187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F74C8D26DD324000749187 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2F74C8F26DD324000749187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2F74C8F26DD324000749187 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2F74C9226DD324000749187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2F74C9426DD324200749187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2F74C9726DD324200749187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				E2F74C8B26DD324000749187 /* AppDelegate.swift */,
 				E2F74C8D26DD324000749187 /* SceneDelegate.swift */,
-				E2F74C8F26DD324000749187 /* ViewController.swift */,
+				E2F74C8F26DD324000749187 /* MainViewController.swift */,
 				E2F74C9126DD324000749187 /* Main.storyboard */,
 				E2F74C9426DD324200749187 /* Assets.xcassets */,
 				E2F74C9626DD324200749187 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2F74C9026DD324000749187 /* ViewController.swift in Sources */,
+				E2F74C9026DD324000749187 /* MainViewController.swift in Sources */,
 				E2F74C8C26DD324000749187 /* AppDelegate.swift in Sources */,
 				E2F74C8E26DD324000749187 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,7 +296,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ahmeda.GQLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ahmeda.GQLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
