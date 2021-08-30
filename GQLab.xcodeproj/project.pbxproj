@@ -58,10 +58,10 @@
 			children = (
 				E2F74C8B26DD324000749187 /* AppDelegate.swift */,
 				E2F74C8D26DD324000749187 /* SceneDelegate.swift */,
-				E2F74C8F26DD324000749187 /* MainViewController.swift */,
-				E2F74C9126DD324000749187 /* Main.storyboard */,
-				E2F74C9426DD324200749187 /* Assets.xcassets */,
 				E2F74C9626DD324200749187 /* LaunchScreen.storyboard */,
+				E2F74C9126DD324000749187 /* Main.storyboard */,
+				E2F74C8F26DD324000749187 /* MainViewController.swift */,
+				E2F74C9426DD324200749187 /* Assets.xcassets */,
 				E2F74C9926DD324200749187 /* Info.plist */,
 			);
 			path = GQLab;
