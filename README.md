@@ -17,7 +17,3 @@ GQLab is a video game research and analysis app that allows users to search for 
 - **Mobile:** This app would be developed for mobile because it's meant to be a quick and easy analysis tool that can be accessed on the go at any time.
 - **Story:** Lets users search for and explore information about videogames as well as view customized analysis of their market data.
 - **Market:** Video game developers, publishers, data analysts and any curious gamer looking for some insights about video games and the industry.
-
-## Product Spec
-
-### 1. User Stories
