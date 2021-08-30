@@ -1,4 +1,4 @@
-# Game Query Lab - iOS Edition with Xcode
+# Game Query Lab - iOS Edition
 
 ## Table of Contents
 1. [Overview](#Overview)
