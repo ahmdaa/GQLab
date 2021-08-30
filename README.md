@@ -1,4 +1,4 @@
-# GQLab (Game Query Lab)
+# GQLab - Game Query Lab
 
 ## Table of Contents
 1. [Overview](#Overview)
