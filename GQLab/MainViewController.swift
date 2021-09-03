@@ -15,10 +15,26 @@ class MainViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var hasSearched = false // Track if the user made a search
+    
+    struct TableView {
+        struct CellIdentifiers {
+            static let searchResultCell = "SearchResultCell"
+            static let nothingFoundCell = "NothingFoundCell"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Register a cell nib for a search result cell
+        var cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
+        
+        // Register a cell nib for an empty cell
+        cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
+        tableView.register(
+          cellNib,
+          forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
     }
 }
 
@@ -36,12 +52,16 @@ extension MainViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         
         // print("The search text is: '\(searchBar.text!)'")
-        if searchBar.text! != "none" {
-            for i in 0...2 {
-                let searchResult = SearchResult()
-                searchResult.name = String(format: "Fake Result %d for", i)
-                searchResult.artistName = searchBar.text!
-                searchResults.append(searchResult)
+        if searchBar.text! == "None" {
+            searchResults.removeAll()
+        } else {
+            if searchResults.isEmpty {
+                for i in 0...2 {
+                    let searchResult = SearchResult()
+                    searchResult.name = String(format: "Fake Result %d for", i)
+                    searchResult.artistName = searchBar.text!
+                    searchResults.append(searchResult)
+                }
             }
         }
         hasSearched = true // User made a search
@@ -62,25 +82,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "SearchResultCell"
-        
-        var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
-        }
-        
+        // If there are no search results, show nothing found cell
         if searchResults.count == 0 {
-            cell.textLabel!.text = "(Nothing found)"
-            cell.detailTextLabel!.text = ""
+            return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
+        // Otherwise show search result cells
         } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier:TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
-            
-            cell.textLabel!.text = searchResult.name
-            cell.detailTextLabel!.text = searchResult.artistName
+            cell.gameNameLabel.text = searchResult.name
+            return cell
         }
-        
-        return cell
     }
     
     // Deselect a row when tapping
