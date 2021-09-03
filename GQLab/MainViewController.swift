@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
-    var hasSearched = false // Track if the user made a search
+    // Track if the user made a search
+    var hasSearched = false
     
     struct TableView {
         struct CellIdentifiers {
@@ -35,6 +36,8 @@ class MainViewController: UIViewController {
         tableView.register(
           cellNib,
           forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+        
+        searchBar.becomeFirstResponder()
     }
 }
 
