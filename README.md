@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-Game Query Lab or GQLab is a video game research and analysis app that allows users to search for and retrieve general information and market data about video games from IGDB and then compare or explore this information or data further with in-app "experiments" created by the user.  
+Game Query Lab or GQLab is a video game research and analysis app that allows users to search or query for and retrieve general information and market data about video games from RAWG Video Games Database and then compare or explore this information or data further with in-app "experiments" created by the user.  
 
 **This is an iOS edition of the app developed with Xcode.**
 
