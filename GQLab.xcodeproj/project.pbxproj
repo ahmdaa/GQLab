@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5CBAD3A9238F7980F752E4A /* Pods_GQLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757DF8618619CAE18765F704 /* Pods_GQLab.framework */; };
+		E29CF94526E2DEF400961A1F /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29CF94426E2DEF400961A1F /* LoadingCell.xib */; };
+		E2D8621E26E32D080058449F /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8621D26E32D080058449F /* api.swift */; };
 		E2F74C8C26DD324000749187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8B26DD324000749187 /* AppDelegate.swift */; };
 		E2F74C8E26DD324000749187 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8D26DD324000749187 /* SceneDelegate.swift */; };
 		E2F74C9026DD324000749187 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8F26DD324000749187 /* MainViewController.swift */; };
 		E2F74C9326DD324000749187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F74C9126DD324000749187 /* Main.storyboard */; };
 		E2F74C9526DD324200749187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F74C9426DD324200749187 /* Assets.xcassets */; };
 		E2F74C9826DD324200749187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F74C9626DD324200749187 /* LaunchScreen.storyboard */; };
+		E2FF240026E155AA00DB9501 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF23FF26E155AA00DB9501 /* SearchResult.swift */; };
+		E2FF240226E166BB00DB9501 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FF240126E166BB00DB9501 /* SearchResultCell.xib */; };
+		E2FF240426E172E000DB9501 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF240326E172E000DB9501 /* SearchResultCell.swift */; };
+		E2FF240626E1E7C500DB9501 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FF240526E1E7C500DB9501 /* NothingFoundCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		492D4F072E543DB0647C4610 /* Pods-GQLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GQLab.release.xcconfig"; path = "Target Support Files/Pods-GQLab/Pods-GQLab.release.xcconfig"; sourceTree = "<group>"; };
+		6F3F36A61BCDB1BBFC03655E /* Pods-GQLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GQLab.debug.xcconfig"; path = "Target Support Files/Pods-GQLab/Pods-GQLab.debug.xcconfig"; sourceTree = "<group>"; };
+		757DF8618619CAE18765F704 /* Pods_GQLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GQLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29CF94426E2DEF400961A1F /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		E2D8621D26E32D080058449F /* api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		E2F74C8826DD324000749187 /* GQLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GQLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F74C8B26DD324000749187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F74C8D26DD324000749187 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +36,10 @@
 		E2F74C9426DD324200749187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2F74C9726DD324200749187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2F74C9926DD324200749187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FF23FF26E155AA00DB9501 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		E2FF240126E166BB00DB9501 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		E2FF240326E172E000DB9501 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		E2FF240526E1E7C500DB9501 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CBAD3A9238F7980F752E4A /* Pods_GQLab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		715091C376CE5D6C1E7EA179 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				757DF8618619CAE18765F704 /* Pods_GQLab.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DE43BE43CC7224BF74FF301 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F3F36A61BCDB1BBFC03655E /* Pods-GQLab.debug.xcconfig */,
+				492D4F072E543DB0647C4610 /* Pods-GQLab.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E2F74C7F26DD324000749187 = {
 			isa = PBXGroup;
 			children = (
 				E2F74C8A26DD324000749187 /* GQLab */,
 				E2F74C8926DD324000749187 /* Products */,
+				7DE43BE43CC7224BF74FF301 /* Pods */,
+				715091C376CE5D6C1E7EA179 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,8 +98,14 @@
 				E2F74C9626DD324200749187 /* LaunchScreen.storyboard */,
 				E2F74C9126DD324000749187 /* Main.storyboard */,
 				E2F74C8F26DD324000749187 /* MainViewController.swift */,
+				E2FF23FF26E155AA00DB9501 /* SearchResult.swift */,
+				E2FF240126E166BB00DB9501 /* SearchResultCell.xib */,
+				E2FF240326E172E000DB9501 /* SearchResultCell.swift */,
+				E2FF240526E1E7C500DB9501 /* NothingFoundCell.xib */,
+				E29CF94426E2DEF400961A1F /* LoadingCell.xib */,
 				E2F74C9426DD324200749187 /* Assets.xcassets */,
 				E2F74C9926DD324200749187 /* Info.plist */,
+				E2D8621D26E32D080058449F /* api.swift */,
 			);
 			path = GQLab;
 			sourceTree = "<group>";
@@ -74,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2F74C9C26DD324200749187 /* Build configuration list for PBXNativeTarget "GQLab" */;
 			buildPhases = (
+				CA81D81B92ECA8EB18F38B8A /* [CP] Check Pods Manifest.lock */,
 				E2F74C8426DD324000749187 /* Sources */,
 				E2F74C8526DD324000749187 /* Frameworks */,
 				E2F74C8626DD324000749187 /* Resources */,
+				F5A2FC7A269B09214B32B372 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,11 +171,56 @@
 			files = (
 				E2F74C9826DD324200749187 /* LaunchScreen.storyboard in Resources */,
 				E2F74C9526DD324200749187 /* Assets.xcassets in Resources */,
+				E29CF94526E2DEF400961A1F /* LoadingCell.xib in Resources */,
+				E2FF240226E166BB00DB9501 /* SearchResultCell.xib in Resources */,
+				E2FF240626E1E7C500DB9501 /* NothingFoundCell.xib in Resources */,
 				E2F74C9326DD324000749187 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA81D81B92ECA8EB18F38B8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GQLab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5A2FC7A269B09214B32B372 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GQLab/Pods-GQLab-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GQLab/Pods-GQLab-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GQLab/Pods-GQLab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2F74C8426DD324000749187 /* Sources */ = {
@@ -139,7 +229,10 @@
 			files = (
 				E2F74C9026DD324000749187 /* MainViewController.swift in Sources */,
 				E2F74C8C26DD324000749187 /* AppDelegate.swift in Sources */,
+				E2FF240026E155AA00DB9501 /* SearchResult.swift in Sources */,
 				E2F74C8E26DD324000749187 /* SceneDelegate.swift in Sources */,
+				E2D8621E26E32D080058449F /* api.swift in Sources */,
+				E2FF240426E172E000DB9501 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +376,7 @@
 		};
 		E2F74C9D26DD324200749187 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F3F36A61BCDB1BBFC03655E /* Pods-GQLab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +396,7 @@
 		};
 		E2F74C9E26DD324200749187 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 492D4F072E543DB0647C4610 /* Pods-GQLab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
