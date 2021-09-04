@@ -17,10 +17,12 @@ class ResultArray: Codable {
 class SearchResult: Codable, CustomStringConvertible {
     var gameSlug: String = ""
     var gameName: String = ""
+    var gameCoverImage: String? = ""
     
     enum CodingKeys: String, CodingKey {
         case gameSlug = "slug"
         case gameName = "name"
+        case gameCoverImage = "background_image"
     }
     
     // Describe result object

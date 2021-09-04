@@ -152,6 +152,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell,for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
             cell.gameNameLabel.text = searchResult.gameName
+            
+//            if let cover = searchResult.gameCoverImage {
+//                print(cover)
+//            }
             return cell
         }
     }
