@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MainViewController: UIViewController {
     
@@ -153,9 +154,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let searchResult = searchResults[indexPath.row]
             cell.gameNameLabel.text = searchResult.gameName
             
-//            if let cover = searchResult.gameCoverImage {
-//                print(cover)
-//            }
+            if let cover = searchResult.gameCoverImage {
+                let coverUrl = URL(string: cover)!
+                cell.coverArtImageView.af.setImage(withURL: coverUrl)
+            }
             return cell
         }
     }
