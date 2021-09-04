@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E29CF94526E2DEF400961A1F /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29CF94426E2DEF400961A1F /* LoadingCell.xib */; };
+		E29CF94726E3147900961A1F /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CF94626E3147900961A1F /* api.swift */; };
 		E2F74C8C26DD324000749187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8B26DD324000749187 /* AppDelegate.swift */; };
 		E2F74C8E26DD324000749187 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8D26DD324000749187 /* SceneDelegate.swift */; };
 		E2F74C9026DD324000749187 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F74C8F26DD324000749187 /* MainViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E29CF94426E2DEF400961A1F /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		E29CF94626E3147900961A1F /* api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		E2F74C8826DD324000749187 /* GQLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GQLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F74C8B26DD324000749187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F74C8D26DD324000749187 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,8 +77,10 @@
 				E2FF240126E166BB00DB9501 /* SearchResultCell.xib */,
 				E2FF240326E172E000DB9501 /* SearchResultCell.swift */,
 				E2FF240526E1E7C500DB9501 /* NothingFoundCell.xib */,
+				E29CF94426E2DEF400961A1F /* LoadingCell.xib */,
 				E2F74C9426DD324200749187 /* Assets.xcassets */,
 				E2F74C9926DD324200749187 /* Info.plist */,
+				E29CF94626E3147900961A1F /* api.swift */,
 			);
 			path = GQLab;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 			files = (
 				E2F74C9826DD324200749187 /* LaunchScreen.storyboard in Resources */,
 				E2F74C9526DD324200749187 /* Assets.xcassets in Resources */,
+				E29CF94526E2DEF400961A1F /* LoadingCell.xib in Resources */,
 				E2FF240226E166BB00DB9501 /* SearchResultCell.xib in Resources */,
 				E2FF240626E1E7C500DB9501 /* NothingFoundCell.xib in Resources */,
 				E2F74C9326DD324000749187 /* Main.storyboard in Resources */,
@@ -155,6 +162,7 @@
 				E2F74C8C26DD324000749187 /* AppDelegate.swift in Sources */,
 				E2FF240026E155AA00DB9501 /* SearchResult.swift in Sources */,
 				E2F74C8E26DD324000749187 /* SceneDelegate.swift in Sources */,
+				E29CF94726E3147900961A1F /* api.swift in Sources */,
 				E2FF240426E172E000DB9501 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

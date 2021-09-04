@@ -9,35 +9,67 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var searchResults = [SearchResult]()
-    
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
-    // Track if the user made a search
-    var hasSearched = false
+    var searchResults = [SearchResult]()
+    var hasSearched = false // Track if the user made a search
+    var isLoading = false // Track if a network request is loading
+    var dataTask: URLSessionDataTask?
     
     struct TableView {
         struct CellIdentifiers {
             static let searchResultCell = "SearchResultCell"
             static let nothingFoundCell = "NothingFoundCell"
+            static let loadingCell = "LoadingCell"
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Register a cell nib for a search result cell
+        // Register nib for a search result cell
         var cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
         
-        // Register a cell nib for an empty cell
+        // Register nib for an empty cell
         cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
-        tableView.register(
-          cellNib,
-          forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+        
+        // Register nib for a loading cell
+        cellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
         
         searchBar.becomeFirstResponder()
+    }
+    
+    // MARK: - Helper Methods
+    func createSearchURL(searchText: String) -> URL {
+        // URL Encoding
+        let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        
+        let urlString = String(format: "https://rawg.io/api/games?search=%@&key=\(apiKey)", encodedText)
+        let url = URL(string: urlString)
+        return url!
+    }
+    
+    func parse(data: Data) -> [SearchResult] {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(ResultArray.self, from:data)
+            return result.results
+        } catch {
+            print("JSON Error: \(error)")
+            return []
+        }
+    }
+    
+    func showNetworkError() {
+        let alert = UIAlertController(title: "Network Error", message: "Please try again.", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -50,32 +82,56 @@ class MainViewController: UIViewController {
 extension MainViewController: UISearchBarDelegate {
     /* UISearchBarDelegate method that is invoked when user taps the search button */
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        // Dismiss keyboard
-        searchBar.resignFirstResponder()
-        
-        // print("The search text is: '\(searchBar.text!)'")
-        if searchBar.text! == "None" {
-            searchResults.removeAll()
-        } else {
-            if searchResults.isEmpty {
-                for i in 0...2 {
-                    let searchResult = SearchResult()
-                    searchResult.name = String(format: "Fake Result %d for", i)
-                    searchResult.artistName = searchBar.text!
-                    searchResults.append(searchResult)
+        performSearch()
+    }
+    
+    func performSearch() {
+        if !searchBar.text!.isEmpty {
+            searchBar.resignFirstResponder()
+            dataTask?.cancel()
+            isLoading = true
+            tableView.reloadData()
+            
+            hasSearched = true
+            searchResults = []
+            
+            let searchURL = createSearchURL(searchText: searchBar.text!)
+            
+            let session = URLSession.shared
+            dataTask = session.dataTask(with: searchURL)
+            { data, response, error in
+                if let error = error as NSError?, error.code == -999 {
+                    return
+                } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                    if let data = data {
+                        self.searchResults = self.parse(data: data)
+                        DispatchQueue.main.async {
+                            self.isLoading = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
+                } else {
+                    print("Failure! \(response!)")
+                }
+                DispatchQueue.main.async {
+                    self.hasSearched = false
+                    self.isLoading = false
+                    self.tableView.reloadData()
+                    self.showNetworkError()
                 }
             }
+            dataTask?.resume()
         }
-        hasSearched = true // User made a search
-        tableView.reloadData()
     }
 }
 
 // MARK: - Table View Delegate
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !hasSearched {
+        if isLoading {
+          return 1
+        } else if !hasSearched {
             return 0
         } else if searchResults.count == 0 {
             return 1
@@ -85,14 +141,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // If there are no search results, show nothing found cell
-        if searchResults.count == 0 {
+        if isLoading {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.loadingCell, for: indexPath)
+            let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
+            spinner.startAnimating()
+            return cell
+        } else if searchResults.count == 0 {
             return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
-        // Otherwise show search result cells
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier:TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell,for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
-            cell.gameNameLabel.text = searchResult.name
+            cell.gameNameLabel.text = searchResult.gameName
             return cell
         }
     }
@@ -104,7 +163,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Allows row selection only when there are search results
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if searchResults.count == 0 {
+        if searchResults.count == 0 || isLoading {
             return nil
         } else {
             return indexPath
