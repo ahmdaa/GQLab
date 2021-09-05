@@ -20,6 +20,10 @@ Game Query Lab or GQLab is a video game research and analysis app that allows us
 
 ### Learning Objectives
 - Practice using [**scrum**](https://www.scrum.org/resources/what-is-scrum), an agile software development methodology.
+  - Acting as product owner, scrum master and the development team.
+  - Using Github's repository issues as a product backlog with milestones as sprints.
+  - Creating a project in Github's repository projects to act as a scrum board.
+  - Perform sprint planning, daily scrum, and sprint reviews and retrospectives.
 - Practice developing applications with **Xcode**, **Swift** and the **UIKit** framework.
 - Practice following fundamental design patterns for iOS apps.
 - Practice developing iOS apps that utilize web services.
