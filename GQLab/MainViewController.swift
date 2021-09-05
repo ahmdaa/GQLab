@@ -156,6 +156,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             if let cover = searchResult.gameCoverImage {
                 let coverUrl = URL(string: cover)!
+                cell.coverArtImageView.layer.cornerRadius = cell.coverArtImageView.frame.height/2 // Rounded corners
                 cell.coverArtImageView.af.setImage(withURL: coverUrl)
             }
             return cell
