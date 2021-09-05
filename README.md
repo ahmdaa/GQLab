@@ -25,5 +25,8 @@ Game Query Lab or GQLab is a video game research and analysis app that allows us
   - Creating a project in Github's repository projects to act as a scrum board.
   - Perform sprint planning, daily scrum, and sprint reviews and retrospectives.
 - Practice developing applications with **Xcode**, **Swift** and the **UIKit** framework.
-- Practice following fundamental design patterns for iOS apps.
+- Practice following the fundamental design patterns of iOS apps.
+  - Model-View-Controller or MVC
+  - Delegation
+  - Target-action
 - Practice developing iOS apps that utilize web services.
